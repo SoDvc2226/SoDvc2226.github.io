@@ -5,39 +5,141 @@
   <title>Srećko Đurašinović</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 0 20px; color: #222;}
-    h1 {color: #1f77b4;}
-    nav a {margin-right: 15px; text-decoration: none; color: #1f77b4;}
-    section {margin: 40px 0;}
+    :root {
+      --main-color: #1f77b4;
+      --text-color: #222;
+      --bg-color: #fafafa;
+    }
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    img.profile {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 2rem;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    }
+    header div.info {
+      max-width: 600px;
+    }
+    header h1 {
+      margin: 0 0 0.3em;
+      font-size: 1.8rem;
+      color: var(--main-color);
+    }
+    nav {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    nav a {
+      color: var(--main-color);
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+    }
+    nav a:hover { text-decoration: underline; }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 2rem 3rem;
+      background: white;
+    }
+    section { margin: 3rem 0; }
+    h2 {
+      border-bottom: 2px solid var(--main-color);
+      padding-bottom: 0.3rem;
+      color: var(--main-color);
+    }
+    ul { padding-left: 1.2rem; }
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 1rem;
+      font-size: 0.9rem;
+      border-top: 1px solid #eee;
+    }
+    @media (max-width: 700px) {
+      header { flex-direction: column; text-align: center; }
+      img.profile { margin: 0 0 1rem 0; }
+      header div.info { margin: 0; }
+    }
   </style>
 </head>
 <body>
-  <h1>Srećko Đurašinović</h1>
-  <p>PhD candidate at NTU, working on polynomial optimization, SOS relaxations, and neural network verification.</p>
+
+  <header>
+    <img src="assets/profile.jpg" alt="Profile photo" class="profile">
+    <div class="info">
+      <h1>Srećko Đurašinović</h1>
+      <p>PhD candidate at Nanyang Technological University (NTU), Singapore.<br>
+         Working on polynomial optimization, SOS relaxations, and neural network verification.</p>
+      <p>
+        <a href="mailto:srecko@ntu.edu.sg">srecko@ntu.edu.sg</a> · 
+        <a href="https://github.com/SoDvc2226">GitHub</a> · 
+        <a href="#">Google Scholar</a> · 
+        <a href="#">CV</a>
+      </p>
+    </div>
+  </header>
 
   <nav>
     <a href="#research">Research</a>
     <a href="#publications">Publications</a>
+    <a href="#talks">Talks</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="research">
-    <h2>Research</h2>
-    <p>My work focuses on semidefinite relaxations, Christoffel–Darboux kernels, and optimization heuristics for BNN robustness.</p>
-  </section>
+  <main>
+    <section id="research">
+      <h2>Research</h2>
+      <p>My work explores semidefinite relaxations, Christoffel–Darboux kernels (CDK), and optimization heuristics for verifying binary neural networks (BNNs). I design algorithms that strengthen low-order moment-SOS hierarchies and study applications in robustness and measure learning.</p>
+    </section>
 
-  <section id="publications">
-    <h2>Publications</h2>
-    <ul>
-      <li>“CDK-based tightening for POP relaxations”, ICCOPT 2025.</li>
-      <li>“Wasserstein vs TV relaxations for mixture learning”, 2024.</li>
-    </ul>
-  </section>
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul>
+        <li><strong>CDK-based tightening for POP relaxations</strong>, ICCOPT 2025.</li>
+        <li><strong>Wasserstein vs TV relaxations for mixture learning</strong>, 2024.</li>
+      </ul>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:srecko@ntu.edu.sg">srecko@ntu.edu.sg</a></p>
-    <p>GitHub: <a href="https://github.com/SoDvc2226">SoDvc2226</a></p>
-  </section>
+    <section id="talks">
+      <h2>Talks & Presentations</h2>
+      <ul>
+        <li>“Christoffel–Darboux kernels for polynomial optimization,” ICCOPT 2025, Montréal.</li>
+        <li>“Moment-based learning of Gaussian mixtures,” DesCartes Workshop 2024.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:srecko@ntu.edu.sg">srecko@ntu.edu.sg</a></p>
+      <p>Office: NTU, Singapore · <a href="https://github.com/SoDvc2226">GitHub</a></p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Srećko Đurašinović — Powered by GitHub Pages
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
