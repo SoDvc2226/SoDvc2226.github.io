@@ -83,7 +83,19 @@ p.social-links {
   gap: 20px; /* creates consistent space between links */
   flex-wrap: wrap;
 }
-    
+    #talks h3 {
+  margin-top: 2rem;
+  color: #1f77b4;
+  border-left: 4px solid #1f77b4;
+  padding-left: 8px;
+}
+#talks ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+#talks li {
+  margin-bottom: 0.5rem;
+}
   </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -109,7 +121,7 @@ p.social-links {
   <nav>
     <a href="#research">Research</a>
     <a href="#publications">Publications</a>
-    <a href="#talks">Talks</a>
+    <a href="#talks">Events</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -133,12 +145,23 @@ p.social-links {
       </ul>
     </section>
 
-    <section id="talks">
-      <h2>Talks & Presentations</h2>
-      <ul>
-        <li>To Appear.</li>
-      </ul>
-    </section>
+   <section id="talks">
+  <h2>Events</h2>
+
+  <h3>Conferences & Workshops</h3>
+  <ul>
+    <li><strong>ICLR 2025</strong> — Accepted paper: <em>Christoffel–Darboux Kernel Methods for Polynomial Optimization</em>.</li>
+    <li><strong>ICCOPT 2025</strong> (Montréal, Canada) — Talk: <em>CDK-based tightening for POP relaxations</em>.</li>
+    <li><strong>DesCartes Workshop 2024</strong> (Singapore) — Presentation: <em>Moment-based learning of Gaussian mixtures</em>.</li>
+  </ul>
+
+  <h3>Summer Schools</h3>
+  <ul>
+    <li><strong>Oxford Machine Learning Summer School (OxML) 2024</strong> — Focused on geometric deep learning and optimization.</li>
+    <li><strong>SIAM Optimization Summer School 2023</strong> — Attended advanced lectures on semidefinite programming and moment-SOS hierarchies.</li>
+  </ul>
+</section>
+
 
     <section id="contact">
       <h2>Contact</h2>
