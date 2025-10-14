@@ -78,6 +78,12 @@
       img.profile { margin: 0 0 1rem 0; }
       header div.info { margin: 0; }
     }
+p.social-links {
+  display: flex;
+  gap: 20px; /* creates consistent space between links */
+  flex-wrap: wrap;
+}
+    
   </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -88,17 +94,12 @@
     <div class="info">
       <h1>Srećko Đurašinović </h1>
       <p>PhD candidate at Nanyang Technological University (NTU), Singapore, supported by the <a href="https://www.cnrsatcreate.cnrs.fr/descartes/"> DesCartes Project</a> hosted at CNRS@CREATE Singapore.<br> </p>
-     <p>
-        <a href="https://github.com/SoDvc2226">
-          <i class="fab fa-github"></i> GitHub
-        </a> · 
-        <a href="https://scholar.google.com/citations?hl=en&user=r2ZCwy8AAAAJ&view_op=list_works&sortby=pubdate">
-          <i class="fas fa-graduation-cap"></i> Google Scholar
-        </a> · 
-        <a href="https://www.linkedin.com/in/srecko-durasinovic-29b5921ba/">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-    </p>
+     
+      <p class="social-links">
+  <a href="https://github.com/SoDvc2226"><i class="fab fa-github"></i> GitHub</a>
+  <a href="https://scholar.google.com/citations?hl=en&user=r2ZCwy8AAAAJ&view_op=list_works&sortby=pubdate"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+  <a href="https://www.linkedin.com/in/srecko-durasinovic-29b5921ba/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+</p>
     </div>
   </header>
 
