@@ -118,6 +118,32 @@ p.social-links {
   padding-left: 8px;
 }
 
+    .publist {
+  list-style: none;          /* remove default numbering */
+  padding-left: 0;
+  counter-reset: item;       /* initialize counter */
+}
+
+.publist[reversed] > li {
+  counter-increment: item -1; /* decrement for reversed order */
+}
+
+.publist > li {
+  counter-increment: item;    /* normal increment (if not reversed) */
+  margin-bottom: 0.6rem;
+  padding-left: 2.2rem;
+  position: relative;
+}
+
+.publist > li::before {
+  content: "[" counter(item) "] ";
+  position: absolute;
+  left: 0;
+  color: #1f77b4;
+  font-weight: 600;
+}
+
+
 
   </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -157,33 +183,38 @@ p.social-links {
   <li>Employing <strong>Christoffel–Darboux kernel</strong>  as a means to strengthen relaxation bounds and/or obtain exact solutions at low hierarchy orders, thus making (even dense) semidefinite relaxations more computationally tractable</li>
 </ul>
 
-    </section>
-
-   <section id="publications">
+<section id="publications">
   <h2>Publications</h2>
 
   <h3>Submitted</h3>
-  <ol reversed>
-    <li>[2] <strong><a href="https://arxiv.org/pdf/2509.22879">
-      Mixtures Closest to a Given Measure: A Semidefinite Programming Approach
-    </a></strong>, 2025</li>
-    <li>[1] <strong><a href="https://arxiv.org/pdf/2501.14281">
-      Leveraging the Christoffel–Darboux Kernel to Strengthen Moment–SOS Relaxations
-    </a></strong>, 2025</li>
+  <ol reversed class="publist">
+    <li>
+      <strong><a href="https://arxiv.org/pdf/2509.22879">
+        Mixtures Closest to a Given Measure: A Semidefinite Programming Approach
+      </a></strong>, 2025
+    </li>
+    <li>
+      <strong><a href="https://arxiv.org/pdf/2501.14281">
+        Leveraging the Christoffel–Darboux Kernel to Strengthen Moment–SOS Relaxations
+      </a></strong>, 2025
+    </li>
   </ol>
 
   <h3>Conferences</h3>
-  <ol reversed>
-    <li>[1] <strong><a href="https://arxiv.org/pdf/2405.17049">
-      Verifying Properties of Binary Neural Networks Using Sparse Polynomial Optimization
-    </a></strong>, Accepted at ICLR, 2025</li>
+  <ol reversed class="publist">
+    <li>
+      <strong><a href="https://arxiv.org/pdf/2405.17049">
+        Verifying Properties of Binary Neural Networks Using Sparse Polynomial Optimization
+      </a></strong>, Accepted at ICLR, 2025
+    </li>
   </ol>
 
   <h3>Journals</h3>
-  <ol reversed>
-    <li><em>To appear.</em></li>
+  <ol reversed class="publist">
+    <li></li>
   </ol>
 </section>
+
 
 
    <section id="talks">
