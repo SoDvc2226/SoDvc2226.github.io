@@ -14,12 +14,19 @@
   <meta charset="UTF-8">
   <title>Srećko Đurašinović</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
   <style>
     :root {
       --main-color: #1f77b4;
       --text-color: #222;
       --bg-color: #fafafa;
     }
+
     body {
       font-family: system-ui, sans-serif;
       margin: 0;
@@ -27,6 +34,7 @@
       color: var(--text-color);
       line-height: 1.6;
     }
+
     header {
       background: white;
       border-bottom: 1px solid #e5e5e5;
@@ -36,46 +44,63 @@
       align-items: center;
       justify-content: center;
     }
+
     img.profile {
       width: 170px;
       height: 170px;
       border-radius: 50%;
       object-fit: cover;
       margin-right: 2rem;
-      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
     }
+
     header div.info {
-      max-width: 600px;
+      max-width: 650px;
     }
+
     header h1 {
       margin: 0 0 0.3em;
       font-size: 1.8rem;
       color: var(--main-color);
     }
+
     nav {
       text-align: center;
       margin: 1rem 0;
     }
+
     nav a {
       color: var(--main-color);
       text-decoration: none;
       margin: 0 1rem;
       font-weight: 500;
     }
-    nav a:hover { text-decoration: underline; }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     main {
       max-width: 900px;
       margin: 0 auto;
       padding: 1rem 2rem 3rem;
       background: white;
     }
-    section { margin: 3rem 0; }
+
+    section {
+      margin: 3rem 0;
+    }
+
     h2 {
       border-bottom: 2px solid var(--main-color);
       padding-bottom: 0.3rem;
       color: var(--main-color);
     }
-    ul { padding-left: 1.2rem; }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
     footer {
       text-align: center;
       color: #777;
@@ -83,107 +108,128 @@
       font-size: 0.9rem;
       border-top: 1px solid #eee;
     }
-    @media (max-width: 700px) {
-      header { flex-direction: column; text-align: center; }
-      img.profile { margin: 0 0 1rem 0; }
-      header div.info { margin: 0; }
+
+    p.social-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-p.social-links {
-  display: flex;
-  gap: 20px; /* creates consistent space between links */
-  flex-wrap: wrap;
-}
+
+    #publications h3,
     #talks h3 {
-  margin-top: 2rem;
-  color: #1f77b4;
-  border-left: 4px solid #1f77b4;
-  padding-left: 8px;
-}
-#talks ul {
-  list-style: disc;
-  padding-left: 1.5rem;
-}
-#talks li {
-  margin-bottom: 0.5rem;
-}
+      margin-top: 2rem;
+      color: var(--main-color);
+      border-left: 4px solid var(--main-color);
+      padding-left: 8px;
+    }
 
-   #publications ol {
-  list-style: none;       /* remove default numbering */
-  padding-left: 0;
-  counter-reset: pub;     /* for consistent numbering */
-}
-#publications ol li {
-  margin-bottom: 0.6rem;
-}
-#publications ol li::before {
-  counter-increment: pub;
-  content: "[" counter(pub) "] ";
-  color: #1f77b4;
-  font-weight: 600;
-}
-#publications h3 {
-  margin-top: 2rem;
-  color: #1f77b4;
-  border-left: 4px solid #1f77b4;
-  padding-left: 8px;
-}
+    #talks ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+    }
 
+    #talks li {
+      margin-bottom: 0.5rem;
+    }
+
+    /*
+      Publication numbering:
+      <ol reversed> automatically gives the correct descending
+      list-item counter. We simply display it as [n].
+    */
     .publist {
-  list-style: none;          /* remove default numbering */
-  padding-left: 0;
-  counter-reset: item;       /* initialize counter */
-}
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
 
-.publist[reversed] > li {
-  counter-increment: item -1; /* decrement for reversed order */
-}
+    .publist > li {
+      margin-bottom: 0.6rem;
+      padding-left: 2.2rem;
+      position: relative;
+    }
 
-.publist > li {
-  counter-increment: item;    /* normal increment (if not reversed) */
-  margin-bottom: 0.6rem;
-  padding-left: 2.2rem;
-  position: relative;
-}
+    .publist > li::before {
+      content: "[" counter(list-item) "]";
+      position: absolute;
+      left: 0;
+      color: var(--main-color);
+      font-weight: 600;
+    }
 
-.publist > li::before {
-  content: "[" counter(item) "] ";
-  position: absolute;
-  left: 0;
-  color: #1f77b4;
-  font-weight: 600;
-}
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
 
+      img.profile {
+        margin: 0 0 1rem 0;
+      }
 
+      header div.info {
+        margin: 0;
+      }
 
+      nav a {
+        display: inline-block;
+        margin: 0.3rem 0.6rem;
+      }
+
+      main {
+        padding: 1rem 1.2rem 3rem;
+      }
+    }
   </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
   <header>
     <img src="assets/profile.jpeg" alt="Profile photo" class="profile">
-    <div class="info">
-      <h1>Srećko Đurašinović </h1>
-      <p>
-  Research Fellow at <strong>Monash University</strong>, Melbourne, supervised by
-  <a href="https://research.monash.edu/en/persons/james-saunderson/">James Saunderson</a>.
-</p>
 
-<p style="margin-top: 1.2em;">
-  I obtained my PhD from <strong>Nanyang Technological University (NTU)</strong>, Singapore,
-  where I was supervised by
-  <a href="https://homepages.laas.fr/vmagron/index.html">Victor Magron</a> and
-  <a href="https://www.laas.fr/en/homepages/lasserre/jean-bernard-lasserre/">Jean-Bernard Lasserre</a>.
-  My PhD was supported by the
-  <a href="https://www.cnrsatcreate.cnrs.fr/descartes/">DesCartes Project</a>
-  at CNRS@CREATE Singapore.
-</p>
-     
+    <div class="info">
+      <h1>Srećko Đurašinović</h1>
+
+      <p>
+        Research Fellow at <strong>Monash University</strong>, Melbourne,
+        supervised by
+        <a href="https://research.monash.edu/en/persons/james-saunderson/">
+          James Saunderson
+        </a>.
+      </p>
+
+      <p style="margin-top: 1.2em;">
+        I obtained my PhD from
+        <strong>Nanyang Technological University (NTU)</strong>, Singapore,
+        where I was supervised by
+        <a href="https://homepages.laas.fr/vmagron/index.html">
+          Victor Magron
+        </a>
+        and
+        <a href="https://www.laas.fr/en/homepages/lasserre/jean-bernard-lasserre/">
+          Jean-Bernard Lasserre
+        </a>.
+        My PhD was supported by the
+        <a href="https://www.cnrsatcreate.cnrs.fr/descartes/">
+          DesCartes Project
+        </a>
+        at CNRS@CREATE Singapore.
+      </p>
+
       <p class="social-links">
-  <a href="https://github.com/SoDvc2226"><i class="fab fa-github"></i> GitHub</a>
-  <a href="https://scholar.google.com/citations?hl=en&user=r2ZCwy8AAAAJ&view_op=list_works&sortby=pubdate"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-  <a href="https://www.linkedin.com/in/srecko-durasinovic-29b5921ba/"><i class="fab fa-linkedin"></i> LinkedIn</a>
-</p>
+        <a href="https://github.com/SoDvc2226">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+
+        <a href="https://scholar.google.com/citations?hl=en&user=r2ZCwy8AAAAJ&view_op=list_works&sortby=pubdate">
+          <i class="fas fa-graduation-cap"></i> Google Scholar
+        </a>
+
+        <a href="https://www.linkedin.com/in/srecko-durasinovic-29b5921ba/">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </p>
     </div>
   </header>
 
@@ -191,105 +237,164 @@ p.social-links {
     <a href="#research">Research</a>
     <a href="#publications">Publications</a>
     <a href="#talks">Events</a>
+    <a href="#teaching">Teaching</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <main>
+
     <section id="research">
       <h2>Research</h2>
-     <p>My research focuses on:</p>
-<ul>
-  <li><strong>Structure exploitation</strong> in polynomial and semidefinite optimization, enabling applications to machine learning problems such as neural network certification and mixture model identification</li>
-  <li>Employing <strong>Christoffel–Darboux kernel</strong>  as a means to strengthen relaxation bounds and/or obtain exact solutions at low hierarchy orders, thus making (even dense) semidefinite relaxations more computationally tractable</li>
-</ul>
 
-<section id="publications">
-  <h2>Publications</h2>
+      <p>My research focuses on:</p>
 
-  <h3>Submitted</h3>
-  <ol reversed class="publist">
-    <li>
-      <strong>
-        <a href="https://arxiv.org/pdf/2603.00284">
-          Finite convergence of the Moment-SOS hierarchy under hidden convexity
-        </a>
-      </strong>, 2026
-    </li>
+      <ul>
+        <li>
+          <strong>Structure exploitation</strong> in polynomial and semidefinite
+          optimization, enabling applications to machine learning problems such as
+          neural network certification and mixture model identification.
+        </li>
 
-    <li>
-      <strong>
-        <a href="https://arxiv.org/pdf/2501.14281">
-          Leveraging the Christoffel–Darboux Kernel to Strengthen Moment–SOS Relaxations
-        </a>
-      </strong>, 2025
-    </li>
-  </ol>
-
-  <h3>Conferences</h3>
-  <ol reversed class="publist">
-    <li>
-      <strong>
-        <a href="https://arxiv.org/pdf/2509.22879">
-          Mixtures Closest to a Given Measure: A Semidefinite Programming Approach
-        </a>
-      </strong>, accepted at ICML (<strong>oral</strong>), 2026
-    </li>
-
-    <li>
-      <strong>
-        <a href="https://arxiv.org/pdf/2405.17049">
-          Verifying Properties of Binary Neural Networks Using Sparse Polynomial Optimization
-        </a>
-      </strong>, accepted at ICLR, 2025
-    </li>
-  </ol>
-
-  <h3>Journals</h3>
-  <ol reversed class="publist">
-    <li>
-      <strong>
-        <a href="https://link.springer.com/journal/10462">
-          On the Robustness Verification of Binary Neural Networks
-        </a>
-      </strong>, accepted at <em>Artificial Intelligence Review</em>, 2026
-    </li>
-  </ol>
-</section>
+        <li>
+          Employing the <strong>Christoffel–Darboux kernel</strong> as a means to
+          strengthen relaxation bounds and/or obtain exact solutions at low hierarchy
+          orders, thus making even dense semidefinite relaxations more computationally
+          tractable.
+        </li>
+      </ul>
+    </section>
 
 
-   <section id="talks">
-  <h2>Events</h2>
+    <section id="publications">
+      <h2>Publications</h2>
 
-  <h3>Conferences & Workshops</h3>
-  <ul>
-    <li>ICCV BiVision, Honolulu, October 2025</li>
-    <li>ICCOPT, Los Angeles, July 2025 </li>
-    <li>ICLR, Singapore, April 2025 </li>
-    <li>LAAS Research and Technology Days, Toulouse, July 2024</li>
-    <li>SinFra, Toulouse, June 2023</li>
-  </ul>
+      <h3>Submitted</h3>
 
-  <h3>Summer/Winter Schools</h3>
-  <ul>
-    <li>Moments, Non-Negative Polynomials, and Algebraic Statistics, University of Konstanz, Konstanz, February 2025</li>
-    <li>TENORS Learning Week 1, Inria Université Côte d’Azur, Nice, February, 2025</li>
-  </ul>
-</section>
+      <ol reversed class="publist">
+        <li>
+          <strong>
+            <a href="https://arxiv.org/pdf/2603.00284">
+              Finite convergence of the Moment-SOS hierarchy under hidden convexity
+            </a>
+          </strong>,
+          2026
+        </li>
+
+        <li>
+          <strong>
+            <a href="https://arxiv.org/pdf/2501.14281">
+              Leveraging the Christoffel–Darboux Kernel to Strengthen Moment–SOS Relaxations
+            </a>
+          </strong>,
+          2025
+        </li>
+      </ol>
+
+
+      <h3>Conferences</h3>
+
+      <ol reversed class="publist">
+        <li>
+          <strong>
+            <a href="https://arxiv.org/pdf/2509.22879">
+              Mixtures Closest to a Given Measure: A Semidefinite Programming Approach
+            </a>
+          </strong>,
+          accepted at ICML (<strong>oral</strong>), 2026
+        </li>
+
+        <li>
+          <strong>
+            <a href="https://arxiv.org/pdf/2405.17049">
+              Verifying Properties of Binary Neural Networks Using Sparse Polynomial Optimization
+            </a>
+          </strong>,
+          accepted at ICLR, 2025
+        </li>
+      </ol>
+
+
+      <h3>Journals</h3>
+
+      <ol reversed class="publist">
+        <li>
+          <strong>
+            <a href="https://link.springer.com/journal/10462">
+              On the Robustness Verification of Binary Neural Networks
+            </a>
+          </strong>,
+          accepted at <em>Artificial Intelligence Review</em>, 2026
+        </li>
+      </ol>
+    </section>
+
+
+    <section id="talks">
+      <h2>Events</h2>
+
+      <h3>Conferences &amp; Workshops</h3>
+
+      <ul>
+        <li>ICCV BiVision, Honolulu, October 2025</li>
+        <li>ICCOPT, Los Angeles, July 2025</li>
+        <li>ICLR, Singapore, April 2025</li>
+        <li>LAAS Research and Technology Days, Toulouse, July 2024</li>
+        <li>SinFra, Toulouse, June 2023</li>
+      </ul>
+
+      <h3>Summer/Winter Schools</h3>
+
+      <ul>
+        <li>
+          Moments, Non-Negative Polynomials, and Algebraic Statistics,
+          University of Konstanz, Konstanz, February 2025
+        </li>
+
+        <li>
+          TENORS Learning Week 1,
+          Inria Université Côte d’Azur, Nice, February 2025
+        </li>
+      </ul>
+    </section>
+
 
     <section id="teaching">
       <h2>Teaching</h2>
+
       <ul>
-        <li><strong>SC1015:</strong> Introduction to Data Science and Artificial Intelligence, 2024</li>
-        <li><strong>SC5010:</strong> Introduction to Data Analysis, 2023</li>
+        <li>
+          <strong>SC1015:</strong>
+          Introduction to Data Science and Artificial Intelligence, 2024
+        </li>
+
+        <li>
+          <strong>SC5010:</strong>
+          Introduction to Data Analysis, 2023
+        </li>
       </ul>
     </section>
 
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:srecko001@e.ntu.edu.sg">srecko001@e.ntu.edu.sg</a> or <a href="mailto:srecko.durasinovic@cnrsatcreate.sg">srecko.durasinovic@cnrsatcreate.sg</a></p>
-      <p>Office: CNRS@CREATE Ltd., 1 CREATE Way, #08-01, CREATE Tower, Singapore 138602 </p>
+
+      <p>
+        Email:
+        <a href="mailto:srecko001@e.ntu.edu.sg">
+          srecko001@e.ntu.edu.sg
+        </a>
+        or
+        <a href="mailto:srecko.durasinovic@cnrsatcreate.sg">
+          srecko.durasinovic@cnrsatcreate.sg
+        </a>
+      </p>
+
+      <p>
+        Office: CNRS@CREATE Ltd., 1 CREATE Way, #08-01,
+        CREATE Tower, Singapore 138602
+      </p>
     </section>
+
   </main>
 
   <footer>
