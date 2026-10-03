@@ -74,6 +74,17 @@
       --main-color: #1f77b4;
       --text-color: #222;
       --bg-color: #fafafa;
+      --border-color: #e5e5e5;
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
     }
 
 
@@ -86,9 +97,13 @@
     }
 
 
+    /* ===================================================== */
+    /* HEADER                                                */
+    /* ===================================================== */
+
     header {
       background: white;
-      border-bottom: 1px solid #e5e5e5;
+      border-bottom: 1px solid var(--border-color);
       padding: 2rem 1rem;
 
       display: flex;
@@ -120,49 +135,123 @@
 
     header h1 {
       margin: 0 0 0.3em;
-
       font-size: 1.8rem;
-
       color: var(--main-color);
     }
 
 
-    nav {
-      text-align: center;
-
-      margin: 1rem 0;
+    p.social-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
 
-    nav a {
-      color: var(--main-color);
-
+    p.social-links a {
       text-decoration: none;
-
-      margin: 0 1rem;
-
-      font-weight: 500;
     }
 
 
-    nav a:hover {
+    p.social-links a:hover {
       text-decoration: underline;
     }
 
 
+
+    /* ===================================================== */
+    /* TAB NAVIGATION                                        */
+    /* ===================================================== */
+
+    .tab-nav {
+      background: white;
+
+      border-bottom: 1px solid var(--border-color);
+
+      display: flex;
+      justify-content: center;
+
+      gap: 0;
+
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    }
+
+
+    .tab-button {
+      appearance: none;
+      border: none;
+      background: transparent;
+
+      color: var(--main-color);
+
+      padding: 1rem 1.4rem;
+
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+
+      cursor: pointer;
+
+      border-bottom: 3px solid transparent;
+
+      transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+    }
+
+
+    .tab-button:hover {
+      background: #f7f9fb;
+    }
+
+
+    .tab-button.active {
+      border-bottom-color: var(--main-color);
+      background: #f7f9fb;
+    }
+
+
+
+    /* ===================================================== */
+    /* MAIN                                                  */
+    /* ===================================================== */
+
     main {
       max-width: 900px;
+      min-height: 420px;
 
       margin: 0 auto;
 
-      padding: 1rem 2rem 3rem;
+      padding: 1.5rem 2rem 3rem;
 
       background: white;
     }
 
 
-    section {
-      margin: 3rem 0;
+    .tab-section {
+      display: none;
+      animation: fadeIn 0.18s ease;
+    }
+
+
+    .tab-section.active {
+      display: block;
+    }
+
+
+    @keyframes fadeIn {
+
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+
     }
 
 
@@ -172,6 +261,8 @@
       padding-bottom: 0.3rem;
 
       color: var(--main-color);
+
+      margin-top: 0;
     }
 
 
@@ -180,34 +271,13 @@
     }
 
 
-    footer {
-      text-align: center;
 
-      color: #777;
-
-      padding: 1rem;
-
-      font-size: 0.9rem;
-
-      border-top: 1px solid #eee;
-    }
-
-
-    p.social-links {
-      display: flex;
-
-      gap: 20px;
-
-      flex-wrap: wrap;
-    }
-
-
-    /* ---------------------------------- */
-    /* SUBSECTION HEADINGS                */
-    /* ---------------------------------- */
+    /* ===================================================== */
+    /* SUBSECTION HEADINGS                                   */
+    /* ===================================================== */
 
     #publications h3,
-    #talks h3 {
+    #events h3 {
 
       margin-top: 2rem;
 
@@ -219,9 +289,10 @@
     }
 
 
-    /* ---------------------------------- */
-    /* PUBLICATIONS                       */
-    /* ---------------------------------- */
+
+    /* ===================================================== */
+    /* PUBLICATIONS                                          */
+    /* ===================================================== */
 
     .publist {
 
@@ -239,7 +310,7 @@
 
       padding-left: 2.7rem;
 
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.7rem;
     }
 
 
@@ -257,19 +328,25 @@
     }
 
 
-    /* ---------------------------------- */
-    /* PUBLICATION RESOURCE LINKS         */
-    /* ---------------------------------- */
+
+    /* ===================================================== */
+    /* PUBLICATION RESOURCE LINKS                            */
+    /* ===================================================== */
 
     .pub-links {
+
       display: inline-flex;
+
       gap: 0.4rem;
+
       margin-left: 0.55rem;
+
       vertical-align: middle;
     }
 
 
     .pub-link {
+
       display: inline-block;
 
       font-size: 0.75em;
@@ -291,17 +368,21 @@
 
 
     .pub-link:hover {
+
       background: var(--main-color);
+
       color: white;
+
       text-decoration: none;
     }
 
 
-    /* ---------------------------------- */
-    /* EVENTS                             */
-    /* ---------------------------------- */
 
-    #talks ul {
+    /* ===================================================== */
+    /* EVENTS                                                */
+    /* ===================================================== */
+
+    #events ul {
 
       list-style: disc;
 
@@ -309,15 +390,45 @@
     }
 
 
-    #talks li {
+    #events li {
 
       margin-bottom: 0.5rem;
     }
 
 
-    /* ---------------------------------- */
-    /* MOBILE                             */
-    /* ---------------------------------- */
+
+    /* ===================================================== */
+    /* CONTACT                                               */
+    /* ===================================================== */
+
+    .contact-item {
+      margin-bottom: 0.7rem;
+    }
+
+
+
+    /* ===================================================== */
+    /* FOOTER                                                */
+    /* ===================================================== */
+
+    footer {
+
+      text-align: center;
+
+      color: #777;
+
+      padding: 1rem;
+
+      font-size: 0.9rem;
+
+      border-top: 1px solid #eee;
+    }
+
+
+
+    /* ===================================================== */
+    /* MOBILE                                                */
+    /* ===================================================== */
 
     @media (max-width: 700px) {
 
@@ -341,17 +452,35 @@
       }
 
 
-      nav a {
+      .tab-nav {
 
-        display: inline-block;
+        justify-content: flex-start;
 
-        margin: 0.3rem 0.6rem;
+        overflow-x: auto;
+
+        scrollbar-width: none;
+      }
+
+
+      .tab-nav::-webkit-scrollbar {
+
+        display: none;
+      }
+
+
+      .tab-button {
+
+        flex: 0 0 auto;
+
+        padding: 0.85rem 1rem;
+
+        font-size: 0.95rem;
       }
 
 
       main {
 
-        padding: 1rem 1.2rem 3rem;
+        padding: 1.2rem 1.2rem 3rem;
       }
 
 
@@ -367,6 +496,7 @@
 </head>
 
 
+
 <body>
 
 
@@ -375,7 +505,6 @@
   <!-- ====================================================== -->
 
   <header>
-
 
     <img
       src="assets/profile.jpeg"
@@ -432,33 +561,22 @@
 
       <p class="social-links">
 
-
         <a href="https://github.com/SoDvc2226">
-
           <i class="fab fa-github"></i>
-
           GitHub
-
         </a>
 
 
         <a href="https://scholar.google.com/citations?hl=en&user=r2ZCwy8AAAAJ&view_op=list_works&sortby=pubdate">
-
           <i class="fas fa-graduation-cap"></i>
-
           Google Scholar
-
         </a>
 
 
         <a href="https://www.linkedin.com/in/srecko-durasinovic-29b5921ba/">
-
           <i class="fab fa-linkedin"></i>
-
           LinkedIn
-
         </a>
-
 
       </p>
 
@@ -470,37 +588,61 @@
 
 
   <!-- ====================================================== -->
-  <!-- NAVIGATION                                             -->
+  <!-- TAB NAVIGATION                                         -->
   <!-- ====================================================== -->
 
-  <nav>
+  <nav class="tab-nav">
 
-    <a href="#research">
-      Research
-    </a>
+    <button
+      class="tab-button active"
+      data-tab="home"
+      type="button"
+    >
+      Home
+    </button>
 
-    <a href="#publications">
+
+    <button
+      class="tab-button"
+      data-tab="publications"
+      type="button"
+    >
       Publications
-    </a>
+    </button>
 
-    <a href="#talks">
+
+    <button
+      class="tab-button"
+      data-tab="events"
+      type="button"
+    >
       Events
-    </a>
+    </button>
 
-    <a href="#teaching">
+
+    <button
+      class="tab-button"
+      data-tab="teaching"
+      type="button"
+    >
       Teaching
-    </a>
+    </button>
 
-    <a href="#contact">
+
+    <button
+      class="tab-button"
+      data-tab="contact"
+      type="button"
+    >
       Contact
-    </a>
+    </button>
 
   </nav>
 
 
 
   <!-- ====================================================== -->
-  <!-- MAIN                                                   -->
+  <!-- MAIN CONTENT                                           -->
   <!-- ====================================================== -->
 
   <main>
@@ -508,33 +650,59 @@
 
 
     <!-- ==================================================== -->
-    <!-- RESEARCH                                             -->
+    <!-- HOME                                                 -->
     <!-- ==================================================== -->
 
-    <section id="research">
+    <section
+      id="home"
+      class="tab-section active"
+    >
 
       <h2>Research</h2>
 
-      <p>My research focuses on:</p>
+
+      <p>
+        My research focuses on:
+      </p>
+
 
       <ul>
 
         <li>
-          <strong>Polynomial and semidefinite optimization</strong>,
+
+          <strong>
+            Polynomial and semidefinite optimization
+          </strong>,
+
           particularly the exploitation of algebraic and convex structure
           to obtain stronger and more computationally efficient relaxations.
+
         </li>
 
+
         <li>
-          <strong>Christoffel–Darboux kernel methods</strong>
+
+          <strong>
+            Christoffel–Darboux kernel methods
+          </strong>
+
           for strengthening low-order Moment–SOS relaxations,
-          extracting candidate solutions, and guiding branch-and-bound algorithms.
+          extracting candidate solutions,
+          and guiding branch-and-bound algorithms.
+
         </li>
 
+
         <li>
-          <strong>Applications in machine learning and quantum optimization</strong>,
-          including neural network verification, mixture model identification,
+
+          <strong>
+            Applications in machine learning and quantum optimization
+          </strong>,
+
+          including neural network verification,
+          mixture model identification,
           and optimization problems arising from quantum systems.
+
         </li>
 
       </ul>
@@ -547,7 +715,10 @@
     <!-- PUBLICATIONS                                         -->
     <!-- ==================================================== -->
 
-    <section id="publications">
+    <section
+      id="publications"
+      class="tab-section"
+    >
 
 
       <h2>
@@ -582,6 +753,7 @@
           2026
 
         </li>
+
 
 
         <li>
@@ -635,7 +807,9 @@
 
           2026
 
+
           <span class="pub-links">
+
 
             <a
               href="https://icml.cc/media/PosterPDFs/ICML%202026/66790.png?t=1782712942.8639698"
@@ -646,6 +820,7 @@
               poster
             </a>
 
+
             <a
               href="https://icml.cc/virtual/2026/oral/71052"
               class="pub-link"
@@ -654,6 +829,7 @@
             >
               video
             </a>
+
 
             <a
               href="https://icml.cc/media/icml-2026/Slides/71052_ZNS423p.pdf"
@@ -664,9 +840,11 @@
               slides
             </a>
 
+
           </span>
 
         </li>
+
 
 
         <li>
@@ -686,7 +864,9 @@
 
           2025
 
+
           <span class="pub-links">
+
 
             <a
               href="https://iclr.cc/media/PosterPDFs/ICLR%202025/30678.png?t=1745287626.8086176"
@@ -696,6 +876,7 @@
             >
               poster
             </a>
+
 
           </span>
 
@@ -729,7 +910,11 @@
 
           </strong>,
 
-          <em>Artificial Intelligence Review</em>, 2026
+          <em>
+            Artificial Intelligence Review
+          </em>,
+
+          2026
 
         </li>
 
@@ -745,7 +930,10 @@
     <!-- EVENTS                                               -->
     <!-- ==================================================== -->
 
-    <section id="talks">
+    <section
+      id="events"
+      class="tab-section"
+    >
 
 
       <h2>
@@ -761,12 +949,17 @@
 
       <ul>
 
-<li>
+
+        <li>
           ICML, Seoul, July 2026
         </li>
+
+
         <li>
           SIAM Conference on Optimization, Edinburgh, June 2026
         </li>
+
+
         <li>
           ICCV BiVision, Honolulu, October 2025
         </li>
@@ -836,7 +1029,10 @@
     <!-- TEACHING                                             -->
     <!-- ==================================================== -->
 
-    <section id="teaching">
+    <section
+      id="teaching"
+      class="tab-section"
+    >
 
 
       <h2>
@@ -884,7 +1080,10 @@
     <!-- CONTACT                                              -->
     <!-- ==================================================== -->
 
-    <section id="contact">
+    <section
+      id="contact"
+      class="tab-section"
+    >
 
 
       <h2>
@@ -892,9 +1091,11 @@
       </h2>
 
 
-      <p>
+      <p class="contact-item">
 
-        Email:
+        <strong>
+          Email:
+        </strong>
 
         <a href="mailto:srecko.durasinovic@monash.edu">
           srecko.durasinovic@monash.edu
@@ -909,9 +1110,12 @@
       </p>
 
 
-      <p>
+      <p class="contact-item">
 
-        Office:
+        <strong>
+          Office:
+        </strong>
+
         CNRS@CREATE Ltd.,
         1 CREATE Way,
         #08-01,
@@ -950,25 +1154,19 @@
 
   <script>
 
-    /*
-      Automatically number each publication category
-      from newest to oldest.
 
-      Example with 3 entries:
-
-      first item  -> [3]
-      second item -> [2]
-      third item  -> [1]
-
-      Simply add every new publication
-      at the TOP of the corresponding list.
-    */
+    /* ====================================================== */
+    /* PUBLICATION NUMBERING                                  */
+    /* ====================================================== */
 
     document.querySelectorAll('.publist').forEach(function(list) {
 
-      const items = list.querySelectorAll(':scope > li');
+      const items =
+        list.querySelectorAll(':scope > li');
 
-      const total = items.length;
+      const total =
+        items.length;
+
 
       items.forEach(function(item, index) {
 
@@ -982,12 +1180,160 @@
     });
 
 
-    /*
-      Automatically update copyright year
-    */
+
+    /* ====================================================== */
+    /* TAB NAVIGATION                                         */
+    /* ====================================================== */
+
+    const tabButtons =
+      document.querySelectorAll('.tab-button');
+
+    const tabSections =
+      document.querySelectorAll('.tab-section');
+
+
+    function showTab(tabName) {
+
+
+      tabSections.forEach(function(section) {
+
+        section.classList.remove('active');
+
+      });
+
+
+      tabButtons.forEach(function(button) {
+
+        button.classList.remove('active');
+
+      });
+
+
+      const selectedSection =
+        document.getElementById(tabName);
+
+
+      const selectedButton =
+        document.querySelector(
+          '.tab-button[data-tab="' + tabName + '"]'
+        );
+
+
+      if (selectedSection) {
+
+        selectedSection.classList.add('active');
+
+      }
+
+
+      if (selectedButton) {
+
+        selectedButton.classList.add('active');
+
+      }
+
+
+      /*
+        Update the URL without scrolling the page.
+
+        Example:
+        https://sodvc2226.github.io/#publications
+      */
+
+      if (tabName === 'home') {
+
+        history.replaceState(
+          null,
+          '',
+          window.location.pathname
+        );
+
+      }
+
+      else {
+
+        history.replaceState(
+          null,
+          '',
+          '#' + tabName
+        );
+
+      }
+
+
+      /*
+        Return to the top of the content area,
+        directly below the navigation bar.
+      */
+
+      window.scrollTo({
+        top:
+          document.querySelector('.tab-nav').offsetTop,
+        behavior: 'smooth'
+      });
+
+    }
+
+
+
+    tabButtons.forEach(function(button) {
+
+      button.addEventListener(
+        'click',
+        function() {
+
+          showTab(
+            button.getAttribute('data-tab')
+          );
+
+        }
+      );
+
+    });
+
+
+
+    /* ====================================================== */
+    /* OPEN CORRECT TAB FROM URL                              */
+    /* ====================================================== */
+
+    const initialTab =
+      window.location.hash.substring(1);
+
+
+    const allowedTabs = [
+      'home',
+      'publications',
+      'events',
+      'teaching',
+      'contact'
+    ];
+
+
+    if (
+      initialTab &&
+      allowedTabs.includes(initialTab)
+    ) {
+
+      showTab(initialTab);
+
+    }
+
+    else {
+
+      showTab('home');
+
+    }
+
+
+
+    /* ====================================================== */
+    /* COPYRIGHT YEAR                                         */
+    /* ====================================================== */
 
     document.getElementById('year').textContent =
       new Date().getFullYear();
+
 
   </script>
 
