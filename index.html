@@ -137,25 +137,20 @@
       <ol reversed> automatically gives the correct descending
       list-item counter. We simply display it as [n].
     */
-    .publist {
-      list-style: none;
-      padding-left: 0;
-      margin-left: 0;
-    }
+.publist {
+  padding-left: 2.7rem;
+}
 
-    .publist > li {
-      margin-bottom: 0.6rem;
-      padding-left: 2.2rem;
-      position: relative;
-    }
+.publist > li {
+  margin-bottom: 0.6rem;
+  padding-left: 0.2rem;
+}
 
-    .publist > li::before {
-      content: "[" counter(list-item) "]";
-      position: absolute;
-      left: 0;
-      color: var(--main-color);
-      font-weight: 600;
-    }
+.publist > li::marker {
+  content: "[" counter(list-item) "]  ";
+  color: #1f77b4;
+  font-weight: 600;
+}
 
     @media (max-width: 700px) {
       header {
