@@ -72,7 +72,9 @@
 
     :root {
       --main-color: #1f77b4;
+      --main-color-light: #eaf3f9;
       --text-color: #222;
+      --muted-text: #5c6470;
       --bg-color: #fafafa;
       --border-color: #e5e5e5;
     }
@@ -135,14 +137,18 @@
 
     header h1 {
       margin: 0 0 0.3em;
+
       font-size: 1.8rem;
+
       color: var(--main-color);
     }
 
 
     p.social-links {
       display: flex;
+
       gap: 20px;
+
       flex-wrap: wrap;
     }
 
@@ -168,12 +174,13 @@
       border-bottom: 1px solid var(--border-color);
 
       display: flex;
+
       justify-content: center;
 
-      gap: 0;
-
       position: sticky;
+
       top: 0;
+
       z-index: 100;
 
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
@@ -182,7 +189,9 @@
 
     .tab-button {
       appearance: none;
+
       border: none;
+
       background: transparent;
 
       color: var(--main-color);
@@ -190,7 +199,9 @@
       padding: 1rem 1.4rem;
 
       font-family: inherit;
+
       font-size: 1rem;
+
       font-weight: 600;
 
       cursor: pointer;
@@ -210,6 +221,7 @@
 
     .tab-button.active {
       border-bottom-color: var(--main-color);
+
       background: #f7f9fb;
     }
 
@@ -221,7 +233,8 @@
 
     main {
       max-width: 900px;
-      min-height: 420px;
+
+      min-height: 430px;
 
       margin: 0 auto;
 
@@ -233,6 +246,7 @@
 
     .tab-section {
       display: none;
+
       animation: fadeIn 0.18s ease;
     }
 
@@ -273,6 +287,131 @@
 
 
     /* ===================================================== */
+    /* RESEARCH                                              */
+    /* ===================================================== */
+
+    .research-intro {
+      margin-bottom: 1.7rem;
+    }
+
+
+    .research-list {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 1.15rem;
+    }
+
+
+    .research-item {
+      display: grid;
+
+      grid-template-columns: 120px 1fr;
+
+      gap: 1.2rem;
+
+      align-items: center;
+
+      padding: 1rem 0;
+
+      border-bottom: 1px solid #edf0f2;
+    }
+
+
+    .research-item:last-child {
+      border-bottom: none;
+    }
+
+
+    .research-visual {
+      width: 112px;
+
+      height: 92px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background: #fbfdff;
+
+      border: 1px solid #dbe9f3;
+
+      border-radius: 10px;
+    }
+
+
+    .research-visual svg {
+      width: 88px;
+
+      height: 68px;
+
+      overflow: visible;
+    }
+
+
+    .research-text h3 {
+      margin: 0 0 0.25rem;
+
+      color: var(--text-color);
+
+      font-size: 1.05rem;
+    }
+
+
+    .research-text p {
+      margin: 0;
+
+      color: var(--muted-text);
+
+      line-height: 1.55;
+    }
+
+
+    .research-svg-line {
+      fill: none;
+
+      stroke: var(--main-color);
+
+      stroke-width: 2;
+
+      stroke-linecap: round;
+
+      stroke-linejoin: round;
+    }
+
+
+    .research-svg-light {
+      fill: none;
+
+      stroke: #8db9d6;
+
+      stroke-width: 1.5;
+
+      stroke-linecap: round;
+
+      stroke-linejoin: round;
+    }
+
+
+    .research-svg-fill {
+      fill: var(--main-color);
+    }
+
+
+    .research-svg-soft {
+      fill: var(--main-color-light);
+
+      stroke: var(--main-color);
+
+      stroke-width: 1.4;
+    }
+
+
+
+    /* ===================================================== */
     /* SUBSECTION HEADINGS                                   */
     /* ===================================================== */
 
@@ -295,7 +434,6 @@
     /* ===================================================== */
 
     .publist {
-
       list-style: none;
 
       padding-left: 0;
@@ -305,7 +443,6 @@
 
 
     .publist > li {
-
       position: relative;
 
       padding-left: 2.7rem;
@@ -315,7 +452,6 @@
 
 
     .publist > li::before {
-
       content: "[" attr(data-number) "]";
 
       position: absolute;
@@ -334,7 +470,6 @@
     /* ===================================================== */
 
     .pub-links {
-
       display: inline-flex;
 
       gap: 0.4rem;
@@ -346,7 +481,6 @@
 
 
     .pub-link {
-
       display: inline-block;
 
       font-size: 0.75em;
@@ -368,7 +502,6 @@
 
 
     .pub-link:hover {
-
       background: var(--main-color);
 
       color: white;
@@ -383,7 +516,6 @@
     /* ===================================================== */
 
     #events ul {
-
       list-style: disc;
 
       padding-left: 1.5rem;
@@ -391,7 +523,6 @@
 
 
     #events li {
-
       margin-bottom: 0.5rem;
     }
 
@@ -412,7 +543,6 @@
     /* ===================================================== */
 
     footer {
-
       text-align: center;
 
       color: #777;
@@ -433,7 +563,6 @@
     @media (max-width: 700px) {
 
       header {
-
         flex-direction: column;
 
         text-align: center;
@@ -441,19 +570,16 @@
 
 
       img.profile {
-
         margin: 0 0 1rem 0;
       }
 
 
       header div.info {
-
         margin: 0;
       }
 
 
       .tab-nav {
-
         justify-content: flex-start;
 
         overflow-x: auto;
@@ -463,13 +589,11 @@
 
 
       .tab-nav::-webkit-scrollbar {
-
         display: none;
       }
 
 
       .tab-button {
-
         flex: 0 0 auto;
 
         padding: 0.85rem 1rem;
@@ -479,13 +603,34 @@
 
 
       main {
-
         padding: 1.2rem 1.2rem 3rem;
       }
 
 
-      .pub-links {
+      .research-item {
+        grid-template-columns: 78px 1fr;
 
+        gap: 0.9rem;
+
+        align-items: start;
+      }
+
+
+      .research-visual {
+        width: 72px;
+
+        height: 72px;
+      }
+
+
+      .research-visual svg {
+        width: 58px;
+
+        height: 52px;
+      }
+
+
+      .pub-links {
         margin-left: 0.35rem;
       }
 
@@ -514,7 +659,6 @@
 
 
     <div class="info">
-
 
       <h1>Srećko Đurašinović</h1>
 
@@ -650,7 +794,7 @@
 
 
     <!-- ==================================================== -->
-    <!-- HOME                                                 -->
+    <!-- HOME / RESEARCH                                      -->
     <!-- ==================================================== -->
 
     <section
@@ -660,52 +804,296 @@
 
       <h2>Research</h2>
 
-
-      <p>
+      <p class="research-intro">
         My research focuses on:
       </p>
 
 
-      <ul>
-
-        <li>
-
-          <strong>
-            Polynomial and semidefinite optimization
-          </strong>,
-
-          particularly the exploitation of algebraic and convex structure
-          to obtain stronger and more computationally efficient relaxations.
-
-        </li>
+      <div class="research-list">
 
 
-        <li>
+        <!-- ================================================ -->
+        <!-- 1. POLYNOMIAL / SDP                              -->
+        <!-- ================================================ -->
 
-          <strong>
-            Christoffel–Darboux kernel methods
-          </strong>
+        <div class="research-item">
 
-          for strengthening low-order Moment–SOS relaxations,
-          extracting candidate solutions,
-          and guiding branch-and-bound algorithms.
+          <div
+            class="research-visual"
+            aria-hidden="true"
+          >
 
-        </li>
+            <svg viewBox="0 0 100 80">
+
+              <!-- polynomial curve -->
+              <path
+                class="research-svg-line"
+                d="M8 56
+                   C18 20, 30 20, 38 49
+                   C45 70, 58 67, 66 39
+                   C73 14, 84 19, 92 50"
+              />
+
+              <!-- SDP matrix -->
+              <rect
+                class="research-svg-soft"
+                x="26"
+                y="49"
+                width="48"
+                height="23"
+                rx="3"
+              />
+
+              <line
+                class="research-svg-light"
+                x1="38"
+                y1="52"
+                x2="38"
+                y2="69"
+              />
+
+              <line
+                class="research-svg-light"
+                x1="50"
+                y1="52"
+                x2="50"
+                y2="69"
+              />
+
+              <line
+                class="research-svg-light"
+                x1="62"
+                y1="52"
+                x2="62"
+                y2="69"
+              />
+
+              <line
+                class="research-svg-light"
+                x1="29"
+                y1="57"
+                x2="71"
+                y2="57"
+              />
+
+              <line
+                class="research-svg-light"
+                x1="29"
+                y1="64"
+                x2="71"
+                y2="64"
+              />
+
+              <circle
+                class="research-svg-fill"
+                cx="50"
+                cy="60"
+                r="2"
+              />
+
+            </svg>
+
+          </div>
 
 
-        <li>
+          <div class="research-text">
 
-          <strong>
-            Applications in machine learning and quantum optimization
-          </strong>,
+            <h3>
+              Polynomial and semidefinite optimization
+            </h3>
 
-          including neural network verification,
-          mixture model identification,
-          and optimization problems arising from quantum systems.
+            <p>
+              I study how algebraic and convex structure can be exploited
+              to obtain stronger and more computationally efficient relaxations.
+            </p>
 
-        </li>
+          </div>
 
-      </ul>
+        </div>
+
+
+
+        <!-- ================================================ -->
+        <!-- 2. CHRISTOFFEL–DARBOUX                            -->
+        <!-- ================================================ -->
+
+        <div class="research-item">
+
+          <div
+            class="research-visual"
+            aria-hidden="true"
+          >
+
+            <svg viewBox="0 0 100 80">
+
+              <!-- nested kernel level sets -->
+              <ellipse
+                class="research-svg-light"
+                cx="50"
+                cy="40"
+                rx="34"
+                ry="24"
+              />
+
+              <ellipse
+                class="research-svg-line"
+                cx="50"
+                cy="40"
+                rx="24"
+                ry="17"
+              />
+
+              <ellipse
+                class="research-svg-light"
+                cx="50"
+                cy="40"
+                rx="13"
+                ry="9"
+              />
+
+              <!-- solution / support point -->
+              <circle
+                class="research-svg-fill"
+                cx="57"
+                cy="36"
+                r="3.5"
+              />
+
+              <!-- cut -->
+              <line
+                class="research-svg-line"
+                x1="24"
+                y1="59"
+                x2="78"
+                y2="24"
+              />
+
+            </svg>
+
+          </div>
+
+
+          <div class="research-text">
+
+            <h3>
+              Christoffel–Darboux kernel methods
+            </h3>
+
+            <p>
+              I use Christoffel–Darboux kernels to strengthen low-order
+              Moment–SOS relaxations, extract candidate solutions,
+              and guide branch-and-bound algorithms.
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ================================================ -->
+        <!-- 3. MACHINE LEARNING / QUANTUM                     -->
+        <!-- ================================================ -->
+
+        <div class="research-item">
+
+          <div
+            class="research-visual"
+            aria-hidden="true"
+          >
+
+            <svg viewBox="0 0 100 80">
+
+              <!-- small neural network -->
+              <circle class="research-svg-soft" cx="16" cy="24" r="5" />
+              <circle class="research-svg-soft" cx="16" cy="52" r="5" />
+
+              <circle class="research-svg-soft" cx="42" cy="18" r="5" />
+              <circle class="research-svg-soft" cx="42" cy="38" r="5" />
+              <circle class="research-svg-soft" cx="42" cy="58" r="5" />
+
+              <circle class="research-svg-soft" cx="66" cy="30" r="5" />
+              <circle class="research-svg-soft" cx="66" cy="50" r="5" />
+
+              <line class="research-svg-light" x1="21" y1="24" x2="37" y2="18" />
+              <line class="research-svg-light" x1="21" y1="24" x2="37" y2="38" />
+              <line class="research-svg-light" x1="21" y1="24" x2="37" y2="58" />
+
+              <line class="research-svg-light" x1="21" y1="52" x2="37" y2="18" />
+              <line class="research-svg-light" x1="21" y1="52" x2="37" y2="38" />
+              <line class="research-svg-light" x1="21" y1="52" x2="37" y2="58" />
+
+              <line class="research-svg-light" x1="47" y1="18" x2="61" y2="30" />
+              <line class="research-svg-light" x1="47" y1="18" x2="61" y2="50" />
+
+              <line class="research-svg-light" x1="47" y1="38" x2="61" y2="30" />
+              <line class="research-svg-light" x1="47" y1="38" x2="61" y2="50" />
+
+              <line class="research-svg-light" x1="47" y1="58" x2="61" y2="30" />
+              <line class="research-svg-light" x1="47" y1="58" x2="61" y2="50" />
+
+              <!-- quantum state / Bloch-style sphere -->
+              <circle
+                class="research-svg-line"
+                cx="83"
+                cy="40"
+                r="12"
+              />
+
+              <ellipse
+                class="research-svg-light"
+                cx="83"
+                cy="40"
+                rx="12"
+                ry="4"
+              />
+
+              <line
+                class="research-svg-light"
+                x1="83"
+                y1="28"
+                x2="83"
+                y2="52"
+              />
+
+              <line
+                class="research-svg-line"
+                x1="83"
+                y1="40"
+                x2="91"
+                y2="32"
+              />
+
+              <circle
+                class="research-svg-fill"
+                cx="91"
+                cy="32"
+                r="2.5"
+              />
+
+            </svg>
+
+          </div>
+
+
+          <div class="research-text">
+
+            <h3>
+              Applications in machine learning and quantum optimization
+            </h3>
+
+            <p>
+              Applications include neural network verification,
+              mixture model identification,
+              and optimization problems arising from quantum systems.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
 
     </section>
 
@@ -720,14 +1108,10 @@
       class="tab-section"
     >
 
-
       <h2>
         Publications
       </h2>
 
-
-
-      <!-- ================= SUBMITTED ================= -->
 
 
       <h3>
@@ -737,15 +1121,12 @@
 
       <ol class="publist">
 
-
         <li>
 
           <strong>
 
             <a href="https://arxiv.org/pdf/2603.00284">
-
               Finite convergence of the Moment-SOS hierarchy under hidden convexity
-
             </a>
 
           </strong>,
@@ -755,15 +1136,12 @@
         </li>
 
 
-
         <li>
 
           <strong>
 
             <a href="https://arxiv.org/pdf/2501.14281">
-
               Leveraging the Christoffel–Darboux Kernel to Strengthen Moment–SOS Relaxations
-
             </a>
 
           </strong>,
@@ -772,12 +1150,8 @@
 
         </li>
 
-
       </ol>
 
-
-
-      <!-- ================= CONFERENCES ================= -->
 
 
       <h3>
@@ -787,29 +1161,23 @@
 
       <ol class="publist">
 
-
         <li>
 
           <strong>
 
             <a href="https://arxiv.org/pdf/2509.22879">
-
               Mixtures Closest to a Given Measure:
               A Semidefinite Programming Approach
-
             </a>
 
           </strong>,
 
           accepted at ICML
-
           (<strong>oral</strong>),
-
           2026
 
 
           <span class="pub-links">
-
 
             <a
               href="https://icml.cc/media/PosterPDFs/ICML%202026/66790.png?t=1782712942.8639698"
@@ -840,11 +1208,9 @@
               slides
             </a>
 
-
           </span>
 
         </li>
-
 
 
         <li>
@@ -852,21 +1218,17 @@
           <strong>
 
             <a href="https://arxiv.org/pdf/2405.17049">
-
               Verifying Properties of Binary Neural Networks
               Using Sparse Polynomial Optimization
-
             </a>
 
           </strong>,
 
           accepted at ICLR,
-
           2025
 
 
           <span class="pub-links">
-
 
             <a
               href="https://iclr.cc/media/PosterPDFs/ICLR%202025/30678.png?t=1745287626.8086176"
@@ -877,17 +1239,12 @@
               poster
             </a>
 
-
           </span>
 
         </li>
 
-
       </ol>
 
-
-
-      <!-- ================= JOURNALS ================= -->
 
 
       <h3>
@@ -897,30 +1254,22 @@
 
       <ol class="publist">
 
-
         <li>
 
           <strong>
 
             <a href="https://link.springer.com/journal/10462">
-
               On the Robustness Verification of Binary Neural Networks
-
             </a>
 
           </strong>,
 
-          <em>
-            Artificial Intelligence Review
-          </em>,
-
+          <em>Artificial Intelligence Review</em>,
           2026
 
         </li>
 
-
       </ol>
-
 
     </section>
 
@@ -935,11 +1284,9 @@
       class="tab-section"
     >
 
-
       <h2>
         Events
       </h2>
-
 
 
       <h3>
@@ -949,45 +1296,35 @@
 
       <ul>
 
-
         <li>
           ICML, Seoul, July 2026
         </li>
-
 
         <li>
           SIAM Conference on Optimization, Edinburgh, June 2026
         </li>
 
-
         <li>
           ICCV BiVision, Honolulu, October 2025
         </li>
-
 
         <li>
           ICCOPT, Los Angeles, July 2025
         </li>
 
-
         <li>
           ICLR, Singapore, April 2025
         </li>
 
-
         <li>
-          LAAS Research and Technology Days,
-          Toulouse, July 2024
+          LAAS Research and Technology Days, Toulouse, July 2024
         </li>
-
 
         <li>
           SinFra, Toulouse, June 2023
         </li>
 
-
       </ul>
-
 
 
       <h3>
@@ -997,29 +1334,21 @@
 
       <ul>
 
-
         <li>
-
           Moments, Non-Negative Polynomials, and Algebraic Statistics,
           University of Konstanz,
           Konstanz,
           February 2025
-
         </li>
 
-
         <li>
-
           TENORS Learning Week 1,
           Inria Université Côte d’Azur,
           Nice,
           February 2025
-
         </li>
 
-
       </ul>
-
 
     </section>
 
@@ -1034,7 +1363,6 @@
       class="tab-section"
     >
 
-
       <h2>
         Teaching
       </h2>
@@ -1042,35 +1370,20 @@
 
       <ul>
 
-
         <li>
-
-          <strong>
-            SC1015:
-          </strong>
-
+          <strong>SC1015:</strong>
           Introduction to Data Science and Artificial Intelligence,
-
           2024
-
         </li>
 
 
         <li>
-
-          <strong>
-            SC5010:
-          </strong>
-
+          <strong>SC5010:</strong>
           Introduction to Data Analysis,
-
           2023
-
         </li>
-
 
       </ul>
-
 
     </section>
 
@@ -1085,7 +1398,6 @@
       class="tab-section"
     >
 
-
       <h2>
         Contact
       </h2>
@@ -1093,9 +1405,7 @@
 
       <p class="contact-item">
 
-        <strong>
-          Email:
-        </strong>
+        <strong>Email:</strong>
 
         <a href="mailto:srecko.durasinovic@monash.edu">
           srecko.durasinovic@monash.edu
@@ -1112,9 +1422,7 @@
 
       <p class="contact-item">
 
-        <strong>
-          Office:
-        </strong>
+        <strong>Office:</strong>
 
         CNRS@CREATE Ltd.,
         1 CREATE Way,
@@ -1123,7 +1431,6 @@
         Singapore 138602
 
       </p>
-
 
     </section>
 
@@ -1194,18 +1501,13 @@
 
     function showTab(tabName) {
 
-
       tabSections.forEach(function(section) {
-
         section.classList.remove('active');
-
       });
 
 
       tabButtons.forEach(function(button) {
-
         button.classList.remove('active');
-
       });
 
 
@@ -1220,25 +1522,14 @@
 
 
       if (selectedSection) {
-
         selectedSection.classList.add('active');
-
       }
 
 
       if (selectedButton) {
-
         selectedButton.classList.add('active');
-
       }
 
-
-      /*
-        Update the URL without scrolling the page.
-
-        Example:
-        https://sodvc2226.github.io/#publications
-      */
 
       if (tabName === 'home') {
 
@@ -1261,14 +1552,8 @@
       }
 
 
-      /*
-        Return to the top of the content area,
-        directly below the navigation bar.
-      */
-
       window.scrollTo({
-        top:
-          document.querySelector('.tab-nav').offsetTop,
+        top: document.querySelector('.tab-nav').offsetTop,
         behavior: 'smooth'
       });
 
